@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+    <IsPackable>true</IsPackable>
+    <Description>Binding of InAppSettingsKit for .NET iOS and Mac Catalyst.</Description>
+     <Company>Drastic Actions</Company>
+		<Authors>$(Company)</Authors>
+		<Copyright>Copyright (C) Drastic Actions</Copyright>
+		<IsBindingProject>true</IsBindingProject>
+		<IsPackable>true</IsPackable>
+		<PackageTags>ios catalyst InAppSettingsKit</PackageTags>
+		<PackageProjectUrl>https://github.com/drasticactions/Drastic.InAppSettingsKit</PackageProjectUrl>
+		<PackageReleaseNotes>https://github.com/drasticactions/Drastic.InAppSettingsKit/blob/main/CHANGELOG.md</PackageReleaseNotes>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>favicon.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<DebugType>embedded</DebugType>
+		<Version>1.0.0</Version>
+		<CompressBindingResourcePackage>true</CompressBindingResourcePackage>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="" Visible="false" />
+		<None Include="$(MSBuildThisFileDirectory)favicon.png" Pack="true" PackagePath="" Visible="false" />
+	</ItemGroup>
+
+  <ItemGroup>
+		<NativeReference Include="..\Frameworks\InAppSettingsKit.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
+</Project>
+
